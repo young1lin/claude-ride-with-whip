@@ -14,6 +14,24 @@ A fun Claude Code statusline plugin that displays an animated red galloping hors
   - Debug mode for tracking call timing
   - Cross-platform support (Windows, macOS, Linux)
 
+## Animation Preview
+
+The horse gallops across a dotted path with 8 animation frames:
+
+```
+   ...............................................................................................
+   ......................................🐴⏜))~~..................................................
+   ...................................... ﾉﾉ  //..................................................
+   ...............................................................................................
+```
+
+Horse sprites cycle through:
+```
+Frame 0:  Frame 1:  Frame 2:  Frame 3:
+ 🐴⏜))~   🐴⏜))~~  🐴⏜))~~~  🐴⏜))~~
+ ﾉﾉ ﾉﾉ    / \ ﾉﾉ    \\ //    ﾉﾉ  //
+```
+
 ## Quick Start
 
 ```bash
