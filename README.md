@@ -1,22 +1,22 @@
-# Claude Ride With Whip
+# Claude Ride With Whip - 鞭策快马
 
-A fun Claude Code statusline plugin that displays an animated red galloping horse in the status bar. The horse moves along a dotted path and cycles through 8 animation frames to create a galloping effect.
+一个有趣的 Claude Code 状态栏插件，在状态栏中显示一匹红色奔腾的骏马动画。马沿着虚线路径从右向左奔跑，通过 8 个动画帧循环展示奔跑效果。
 
-## Overview
+## 概述
 
-- **Language**: Go (pure Go, no external dependencies)
-- **Purpose**: Claude Code statusline plugin for visual entertainment
-- **Features**:
-  - Animated horse ASCII art (8 frames, 250ms cycle)
-  - Horse gallops from right to left along dotted path
-  - Red color output for horse sprite
-  - Standalone animation mode for testing
-  - Debug mode for tracking call timing
-  - Cross-platform support (Windows, macOS, Linux)
+- **语言**: Go（纯 Go 实现，无外部依赖）
+- **用途**: Claude Code 状态栏插件，视觉娱乐
+- **特性**:
+  - 动态马匹 ASCII 艺术（8 帧，250ms 循环）
+  - 马沿虚线路径从右向左奔跑
+  - 马的红色输出显示
+  - 独立动画测试模式
+  - 调试模式跟踪调用时机
+  - 跨平台支持（Windows、macOS、Linux）
 
-## Animation Preview
+## 动画预览
 
-The horse gallops across a dotted path with 8 animation frames:
+骏马在虚线路径上奔跑，包含 8 个动画帧：
 
 ```
    ...............................................................................................
@@ -25,42 +25,42 @@ The horse gallops across a dotted path with 8 animation frames:
    ...............................................................................................
 ```
 
-Horse sprites cycle through:
+马的精灵循环：
 ```
-Frame 0:  Frame 1:  Frame 2:  Frame 3:
+帧 0:     帧 1:     帧 2:     帧 3:
  🐴⏜))~   🐴⏜))~~  🐴⏜))~~~  🐴⏜))~~
  ﾉﾉ ﾉﾉ    / \ ﾉﾉ    \\ //    ﾉﾉ  //
 ```
 
-## Quick Start
+## 快速开始
 
 ```bash
-# Build
+# 编译
 make build
 
-# Test animation
+# 测试动画
 .\bin\statusline.exe --animate
 
-# Run tests
+# 运行测试
 make test
 ```
 
-## Installation
+## 安装
 
-### Configure Claude Code
+### 配置 Claude Code
 
-Add to `~/.claude/settings.json` (Windows - note the four backslashes):
+在 `~/.claude/settings.json` 中添加（Windows - 注意四个反斜杠转义）：
 
 ```json
 {
   "statusLine": {
     "type": "command",
-    "command": "C:\\\\Users\\\\<YourUsername>\\\\.claude\\\\statusline.exe"
+    "command": "C:\\\\Users\\\\<你的用户名>\\\\.claude\\\\statusline.exe"
   }
 }
 ```
 
-Then copy the built binary manually:
+然后手动复制编译好的二进制文件：
 ```bash
 # Windows
 copy bin\statusline.exe %USERPROFILE%\.claude\statusline.exe
@@ -69,31 +69,38 @@ copy bin\statusline.exe %USERPROFILE%\.claude\statusline.exe
 cp bin/statusline ~/.claude/statusline
 ```
 
-## Command-Line Options
+## 命令行选项
 
 ```
 statusline [flags]
 
 Flags:
-  -h, --help     Show help message
-  -v, --version  Show version information
-  -a, --animate  Run continuous animation in terminal (for testing)
-  -d, --debug    Enable debug logging
+  -h, --help     显示帮助信息
+  -v, --version  显示版本信息
+  -a, --animate  在终端中运行连续动画（用于测试）
+  -d, --debug    启用调试日志
 ```
 
-## Make Targets
+## Make 目标
 
 ```bash
-make build        # Build for current platform
-make clean        # Remove build artifacts
-make test         # Run tests with coverage report
-make lint         # Run golangci-lint
-make fmt          # Format code
-make build-all    # Build for all platforms
-make release      # Create a new release
-make help         # Show all commands
+make build        # 为当前平台编译
+make clean        # 删除构建产物
+make test         # 运行测试并生成覆盖率报告
+make lint         # 运行 golangci-lint
+make fmt          # 格式化代码
+make build-all    # 为所有平台编译
+make release      # 创建新版本
+make help         # 显示所有命令
 ```
 
-## License
+## 动画详情
 
-[License](LICENSE)
+- **帧周期**: 每帧 250ms（8 帧 = 2 秒循环）
+- **位置**: 每步 500ms（马从右向左移动）
+- **颜色**: 马的精灵以红色渲染（ANSI 颜色 160）
+- **宽度**: 路径宽度适应终端宽度（通常 60-80 字符）
+
+## 许可证
+
+[许可证](LICENSE)
