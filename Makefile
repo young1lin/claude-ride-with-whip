@@ -39,16 +39,6 @@ fmt:
 	go fmt ./...
 	gofmt -w -s .
 
-## install: Build and install to Claude Code config directory
-install: build
-	@echo "Installing to Claude config..."
-	@if [ "$$(go env GOOS)" = "windows" ]; then \
-		copy "$(BIN_DIR)\$(BINARY_NAME)$(GOEXE)" "%USERPROFILE%\.claude\$(BINARY_NAME)$(GOEXE)"; \
-	else \
-		cp "$(BIN_DIR)/$(BINARY_NAME)" "$$HOME/.claude/statusline"; \
-	fi
-	@echo "Installed successfully"
-
 ## release: Create a new release (requires gh CLI)
 release:
 	@echo "Current version: $(VERSION)"

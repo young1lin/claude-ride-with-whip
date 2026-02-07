@@ -47,12 +47,6 @@ make test
 
 ## Installation
 
-### Install to Claude Code
-
-```bash
-make install
-```
-
 ### Configure Claude Code
 
 Add to `~/.claude/settings.json` (Windows - note the four backslashes):
@@ -64,6 +58,15 @@ Add to `~/.claude/settings.json` (Windows - note the four backslashes):
     "command": "C:\\\\Users\\\\<YourUsername>\\\\.claude\\\\statusline.exe"
   }
 }
+```
+
+Then copy the built binary manually:
+```bash
+# Windows
+copy bin\statusline.exe %USERPROFILE%\.claude\statusline.exe
+
+# Unix
+cp bin/statusline ~/.claude/statusline
 ```
 
 ## Command-Line Options
@@ -86,7 +89,6 @@ make clean        # Remove build artifacts
 make test         # Run tests with coverage report
 make lint         # Run golangci-lint
 make fmt          # Format code
-make install      # Install to ~/.claude
 make build-all    # Build for all platforms
 make release      # Create a new release
 make help         # Show all commands
